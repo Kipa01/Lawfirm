@@ -1,0 +1,101 @@
+.cases {
+	&__body {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0 15px;
+	}
+	&__item {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin-bottom: 30px;
+		&:before {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: rgba(#1d2227, .8);
+			opacity: 0;
+			visibility: hidden;
+			transition: .2s linear;
+		}
+	}
+	&__col {
+		flex-basis: 25%;
+		display: block;
+    	height: 320px;
+    	padding: 0 15px;
+    	margin-bottom: 30px;
+		&:nth-child(1) .cases__item {
+			background: url('../../../images/cases/case-1.jpg') no-repeat center;
+			background-size: cover;
+		}
+		&:nth-child(2) {
+			flex-basis: 50%;
+			@media (max-width: 768px) {
+				flex-basis: 100%;
+			}
+		}
+		&:nth-child(2) .cases__item {
+			background: url('../../../images/cases/case-2.jpg') no-repeat center;
+			background-size: cover;
+		}
+		&:nth-child(3) .cases__item {
+			background: url('../../../images/cases/case-3.jpg') no-repeat center;
+			background-size: cover;
+		}
+		&:nth-child(4) .cases__item {
+			background: url('../../../images/cases/case-4.jpg') no-repeat center;
+			background-size: cover;
+		}
+		&:nth-child(5) .cases__item {
+			background: url('../../../images/cases/case-5.jpg') no-repeat center;
+			background-size: cover;
+		}
+		&:nth-child(6) .cases__item {
+			background: url('../../../images/cases/case-6.jpg') no-repeat center;
+			background-size: cover;
+		}
+		&:nth-child(7) .cases__item {
+			background: url('../../../images/cases/case-7.jpg') no-repeat center;
+			background-size: cover;
+		}
+		&:hover {
+			.cases__hover {
+				opacity: 1;
+				visibility: visible;
+			}
+			.cases__item:before {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+		@media (max-width: 1250px) {
+			flex-basis: 50%;
+		}
+		@media (max-width: 768px) {
+			flex-basis: 100%;
+		}
+		@media (max-width: 540px) {
+			height: 225px;
+		}
+	}
+	&__hover {
+		position: absolute;
+		left: 30px;
+		bottom: 20px;
+		z-index: 1;
+		transition: .2s linear;
+		opacity: 0;
+		visibility: hidden;
+	}
+	&__title {
+		color: #fff;
+		font-weight: 500;
+	    font-size: 22px;
+	}
+	&__subtitle {
+		color: rgba(#fff, .6);
+	}
+}

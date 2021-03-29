@@ -1,0 +1,217 @@
+//==========ПОДКЛЮЧЕНИЕ ШРИФТОВ==========//
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+//==========/ПОДКЛЮЧЕНИЕ ШРИФТОВ==========//
+
+//==========ПЕРЕМЕННЫЕ==========//
+
+
+
+//==========/ПЕРЕМЕННЫЕ==========//
+
+//==========ОБНУЛЕНИЕ И ОБЩИЕ ПАРАМЕТРЫ==========//
+
+body {
+	font-family: 'Roboto';
+	font-size: 17px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: gray;
+	&.lock {
+		overflow: hidden;
+	}
+	@media (max-height: 475px) {
+		.menu-header__menu {
+			height: 100%;
+		}
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: none;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+h1, h2, h3 h4, h5, h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.btn {
+
+}
+
+.slick-track {
+    display: flex;
+    align-items: flex-start;
+}
+
+.section {
+	&__head {
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	&__subtitle {
+	    color: #cbb88c;
+	    font-size: 12px;
+	    font-weight: 500;
+	    letter-spacing: 2px;
+	    text-transform: uppercase;
+	}
+	&__title {
+	    font-size: 40px;
+    	font-weight: 600;
+    	color: rgba(0,0,0,.7);
+    	line-height: 1.1;
+	}
+}
+
+.play {
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		background: #cbb88c;
+		animation: pulse 2s infinite;
+		z-index: -1;
+	}
+	svg {
+		max-width: 25%;
+		width: 100%;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: #cbb88c;
+		opacity: .5;
+	}
+	100% {
+		width: 170%;
+		height: 170%;
+		opacity: 0;
+	}
+}
+
+.video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 100000;
+	background: rgba(0, 0, 0, .7);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: .15s linear;
+	video {
+		max-width: 100%;
+		width: 100%;
+	}
+	&__inner {
+		max-width: 1000px;
+		width: 100%;
+		position: relative;
+		@media (max-width: 1050px) {
+			max-width: 90%;
+		}
+	}
+	&__close {
+		position: absolute;
+	    top: -30px;
+   		right: 1px;
+		cursor: pointer;
+		filter: invert(1);
+		opacity: .5;
+		max-width: 15px;
+   		@media (max-height: 400px) {
+			top: 0;
+			opacity: .8;
+   		}
+	}
+}
+
+.why-video.active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.intro-video.active {
+	visibility: visible;
+	opacity: 1;
+}
+
+//==========/ОБНУЛЕНИЕ И ОБЩИЕ ПАРАМЕТРЫ==========//
+
+//==========ОБОЛОЧКА==========//
+
+.wrapper {
+	width: 100%;
+	max-width: calc(100% - 30px);
+	margin: 0 auto;
+}
+
+//==========ОБОЛОЧКА==========//
+
+//==========ОСНОВНАЯ СЕТКА==========//
+
+.container {
+	width: 100%;
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+//==========/ОСНОВНАЯ СЕТКА==========//
+
+//========ПОДКЛЮЧЕНИЕ ФАЙЛОВ СО СТИЛЯМИ========//
+
+@import "blocks/header.scss";
+@import "blocks/intro.scss";
+@import "blocks/benefits.scss";
+@import "blocks/why.scss";
+@import "blocks/practice.scss";
+@import "blocks/cases.scss";
+@import "blocks/testimonial.scss";
+@import "blocks/results.scss";
+@import "blocks/blog.scss";
+@import "blocks/footer.scss";
+@import "blocks/page-intro.scss";
+
+//========/ПОДКЛЮЧЕНИЕ ФАЙЛОВ СО СТИЛЯМИ========//
